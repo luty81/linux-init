@@ -21,15 +21,6 @@ apt install fish -y
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 echo 'omf install lambda' | fish
 
-# Setting cpu governor for max performance
-files=/sys/devices/system/cpu/cpufreq/policy*
-for (file in $files)
-do
-	echo 'performance' > $file/scaling_governor
-done
-
-systemctl disable ondemand
-
 # Installing generic driver for Elementary OS
 apt install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-16.04 -y
 
