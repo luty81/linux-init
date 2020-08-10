@@ -1,8 +1,10 @@
 #! /bin/bash
+echo Getting prepared...
+apt-get --quiet update >> /dev/null
 
-apt update
+echo Installing fish shell...
+apt-get --quiet install fish -y >> /dev/null
 
-apt install fish -y
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-echo 'omf install lambda' | fish
-echo Done!
+echo Installing oh-my-fish plugin...
+curl -L https://get.oh-my.fish > install
+fish install
