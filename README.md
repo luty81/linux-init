@@ -2,6 +2,24 @@
 
 It's a collection of useful shell scripts to make Linux users life easier.
 
+#### linit-install-kali-gui.sh
+Installs needed packages to run Kali Linux GUI through WSL 2. 
+To not execute the shell script at once, run the commands below:
+```sh
+sudo apt update && sudo apt dist-upgrade
+sudo apt install kali-win-kex -y 
+sudo apt install kali-linux-default -y
+```
+
+It will take time. After it is done, just run the following command in order to start Kali Desktop windowed:
+```sh
+kex wtstart
+```
+
+Don't be panic if the Desktop is started in full screen mode and expanded to all monitors! 
+Just press F8 to show the TigerVNC context menu and uncheck the Full Screen option.
+It seems logging out is not working properly so far. Instead you can close the desktop pressing CTRL+C in the terminal (in Windows) where kex was stared.
+
 #### linit-optimize-oldcpu
 Forces the scaling governor to performance policy for all cores and disable ondemand daemon. Two tests were ran in a notebook powered with Intel Core2 Duo P9400. One of them in an Elementary OS installation and it increased the GUI responsiveness. The another was against a Linux Mint installation and doesn't show a performance improvement, at least apparently. None of tests showed an increase in battery draining.
 
