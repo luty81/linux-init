@@ -39,3 +39,44 @@ Installs awesome interactive fish shell and oh-my-fish theme plugin. Follow the 
 ### linit-gitconfig
 Sets default git user name and e-mail required for commit operation. 
 Coming soon: remote github access configuration. 
+
+
+### Docker Help
+Useful when you developing and testing in local containers. 
+Remove orphans switch will prevent you testing against outdated code
+```sh
+docker-compose -f .\docker-compose.yml up --remove-orphans
+```
+
+Prune All
+```sh
+docker system prune --all --force
+```
+
+Blame docker overlay high storage usage
+```sh
+du -hs /var/lib/docker/overlay2/* | grep -Ee '^[0-9]{3}[M]+|[0-9]G' | sort -h
+du -h /var/lib/docker | sort -h -r
+```
+
+Find and clear container stdout persisted logs
+```sh
+find /var/lib/docker/containers -type f -name "*.log" | xargs du -sh | sort -h -r
+truncate -s 0 {{pathToFile}}
+```
+
+Clear all container stdout logs
+```
+truncate -s 0 /var/lib/docker/containers/*/*-json.log
+```
+
+### Search and Replace examples
+```
+sed 's/word1/word2/g' input.file
+# *bsd/macos sed syntax#
+sed 's/word1/word2/g' input.file > output.file
+sed -i 's/word1/word2/g' input.file
+sed -i -e 's/word1/word2/g' -e 's/xx/yy/g' input.file
+## use + separator instead of / ##
+sed -i 's+regex+new-text+g' file.txt
+```
