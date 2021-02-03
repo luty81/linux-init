@@ -1,7 +1,4 @@
 #! /bin/bash
-
-
-
 echo "Postgres admin password: (default is p4\$\$w0rd)"
 read PG_PWD
 

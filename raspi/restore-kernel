@@ -1,0 +1,4 @@
+#! /bin/bash
+
+apt update
+apt --quiet install --reinstalllibraspberrypi0 libraspberrypi-{bin,dev,doc} raspberrypi-bootloader raspberrypi-kernel
