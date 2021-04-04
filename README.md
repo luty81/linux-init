@@ -2,8 +2,10 @@
 
 It's a collection of useful shell scripts to make Linux users life easier.
 
+### Using Kali GUI via WSL on Windows host machine 
 ### linit-install-kali-gui.sh
 Installs needed packages to run Kali Linux GUI through WSL 2. 
+It allows full screen and multiple monitors usage.
 To not execute the shell script at once, run the commands below:
 ```sh
 sudo apt update && sudo apt dist-upgrade
